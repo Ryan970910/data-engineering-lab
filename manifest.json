@@ -1,0 +1,20 @@
+{
+  "files": {
+    ".gitignore": "2bd09ac597a847fb09006fd6615303e290fd8ea71f61ebc5a5b95b26ba2ac8f8",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "README.md": "a080eb935f1cc73ae988fc1d7bfd2cbc1ff3beec567ab7aac3016f5ac9932ea3",
+    "app.js": "f4700bedd4cc8ec2802fe9853c5da95aaa63b2e5d5cda9498a46cd3371501246",
+    "course.json": "703fc7584a8ea0eb6844bd41791ef5a0901c93b0cc936795fcba9293b9528ab1",
+    "docs/data-engineering/ASSESSMENT.md": "379c01f59cbf2a2794d49cb22f378aa310e7bb0415c634265f70abffd88335af",
+    "docs/data-engineering/MANUAL.md": "9dcc780654349df1e5a5fcdf573608303561b9d0fa2b1acde7e03f266232a67c",
+    "docs/data-engineering/README.md": "4665cdca6a316f8497d2868c98749dbf37f172c6fe9910a9c1ff0cdee82f79c4",
+    "docs/data-engineering/dags/club_training.py": "b1e5d2551f08ef745ba052f04605cf47178fa475a17903deb0f85e12eb820344",
+    "docs/data-engineering/env.sh": "8baf249a6c2d40c7812f172e9e5a869c81e52024eae0bbc7154b7e295e0406b8",
+    "docs/data-engineering/lab.py": "f4f2cc8220e6eee2cbaa9694ea9dcb6baba231ff293ade8925523361261e952e",
+    "docs/data-engineering/spark_exercise.py": "b542e76d9ac1aefe6a0e899480f91f12b50e09045d5b534849d53706f502592b",
+    "docs/data-engineering/verify_course.py": "9c5d4be69a28a6d0f8f4c151c8308bd63d5300a08a05e703bfd1d13d7af6b789",
+    "favicon.svg": "f584e28ec2d1c6c5caa2bca7b7743b53e19c91bbb38eb90afd118d80cd25da8f",
+    "index.html": "624ce2bee4e05f45cfd0358352c00da9ec6a3fa3e9883057008250e3d42bbace",
+    "style.css": "e701ab984c12ffd1cba00dca9122306a44b552bb3b063283c57dcc78cafbd065"
+  }
+}
