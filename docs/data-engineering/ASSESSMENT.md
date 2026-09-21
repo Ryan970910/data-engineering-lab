@@ -1,135 +1,77 @@
-# 考核、提交模板与学习记录
+# Assessment: prove that you can do the work
 
-## 1. 教练如何判断你真的会了
+## Four different learning states
+Read means you visited and marked a chapter. Concept-checked means you answered visible questions. Practiced means you executed or implemented the exercise and kept evidence. Assessed means a coach reviewed that evidence, questioned your reasoning and tested transfer with a new variant.
 
-课程采用四类证据：
+The website records only reading, self-checks and your notes. It never silently promotes those into an assessed pass. Exported evidence is a learner-authored draft, not a certificate.
 
-1. **实际操作**：命令、代码、运行日志与结果，能够重复执行。
-2. **解释**：你能用自己的话说明为什么这么写，以及哪种情况下会失败。
-3. **变式迁移**：换一组 id、空值、重复键或输入规模，仍能做对。
-4. **故障恢复**：面对一个未提前告知的错误，能定位并修复，再证明结果正确。
+## Submission format
+For each checkpoint, include:
+1. Module, objective and exact code revision or file.
+2. Environment and versions, including interpreter path.
+3. Prediction before running.
+4. Commands, exit codes and compact actual output.
+5. Input fixture or snapshot hash and expected identities.
+6. Tests, one controlled failure and recovery.
+7. Explanation of why the result follows from the contract.
+8. Help used, uncertainty and limitations.
 
-教练不会因为我自己把代码修好了，就把这一关记为你已经掌握。也不会用“已阅读”“看懂了”代替验收。
+Use only synthetic data. Do not paste credentials, actual names, phone numbers, HKIDs or company configurations. A screenshot is supporting context, not a replacement for a reproducible command and test.
 
-公开练习脚本是辅助证据，不是不可作弊的考试系统。提交可复现代码后，教练应重新执行检查，随机改变至少一个输入条件，并要求你先预测后操作。考核 fixture 不使用生产数据。
+Copy this request into your coaching conversation:
 
-## 2. 每关通过标准
+> Assess M05 (replace with my module). Review the attached code and outputs. Ask me to explain the important choices, then give me an unseen variant. Grade correctness, explanation, independence and diagnosis separately. Do not mark me passed merely because the visible tests pass.
 
-每关四项各 0–5 分，共 20 分：
+## Scoring rubric
+Each dimension is scored 0–5:
+- 0: no relevant evidence or fundamentally unsafe/incorrect result.
+- 1: can repeat terminology or copy steps but cannot explain them.
+- 2: partial success with substantial guidance; important gaps remain.
+- 3: correct routine work with a sound explanation and limited assistance.
+- 4: independent correct work, useful tests and diagnosis of a new variation.
+- 5: strong transfer, explicit trade-offs, robust failure handling and reproducible evidence.
 
-| 维度 | 0 分 | 3 分 | 5 分 |
-|---|---|---|---|
-| 正确性 | 无法执行／结果错误 | 基准正确，边界需提示 | 基准与变式正确，有具体输出核对 |
-| 解释能力 | 只能复述命令 | 能解释主流程 | 能解释语义、取舍和限制 |
-| 独立性 | 核心答案由教练完成 | 看文档后可完成，需少量提示 | 独立完成新的变式 |
-| 排错与证据 | 只说失败／成功 | 能提供命令和异常 | 能提出假设、验证、修复并复测 |
+| Dimension | What the coach examines |
+| --- | --- |
+| Correctness | Exact output, grain, contracts, failure behavior and tests |
+| Explanation | Why the design works; alternatives, assumptions and limits |
+| Independence | Ability to adapt without copying an answer; transparent help log |
+| Diagnosis | Reproducing, localizing and recovering from a controlled new failure |
 
-通过条件：总分至少 16/20，每项至少 3 分，无关键错误。未通过会指出具体差距，给一项补练，再用新变式复测。可查官方文档；机械背诵语法不是考核目标。
+Pass requires at least 16/20, no dimension below 3, and no critical error. Critical errors include using private data publicly, bypassing a failed quality gate, changing authorized matching semantics silently, losing ambiguous identities or claiming unexecuted work as completed.
 
-关键错误包括：
+Documentation lookup is allowed. The coach should distinguish using a reference from copying the full solution without understanding.
 
-- 改掉用户指定的两类匹配条件却没意识到。
-- 空键或不同姓名形成假匹配，或随意丢弃歧义候选。
-- 失败被吞掉，导致下游提交未验证的结果。
-- 说“Airflow 重试天然保证 exactly-once”。
-- 把全量数据 collect 到 driver 却无法说明内存后果。
-- 练习中连接／写入真实业务系统或公开真实个人数据。
+## Checkpoints and required evidence
+| Checkpoint | Modules | Required demonstration |
+| --- | --- | --- |
+| C1: Foundations | M00–M03 | Explain lifecycle and grain; map a new record through the project |
+| C2: Relational correctness | M04–M08 | SQL and independent matcher; exact edges; NULL/duplicate/ambiguity cases |
+| C3: Reliability | M09–M11 | Historical model, uncertain-commit retry and tool-selection decision |
+| C4: Orchestration | M12–M13 | Real Linux versions, successful DAG, retry and blocked downstream task |
+| C5: Spark | M14–M16 | JVM action, independent joins, new fixture and measured plans |
+| C6: Integration | M17–M19 | End-to-end capstone, failure matrix, reproducibility and honest portfolio |
 
-这些错误需要复测，即使其余分数较高也不直接通过。
+Do not make the Linux installation a prerequisite for understanding M00. Conversely, do not grant C4 for a screenshot of a DAG definition without a real task run.
 
-## 3. 三档提示
+## Unseen variants
+Public exercises are deliberately visible. For assessment, the coach should generate a new small fixture or failure condition after reviewing the submission, keeping the published business contract unchanged. Ask the learner to predict the output, implement/test the change and explain discrepancies.
 
-- H1：指出需要关注的现象或概念，不给代码。
-- H2：指出相关 API、文件或最小实验。
-- H3：给局部示例或示范排错。
+Useful variant categories include one-to-many identity edges, duplicate reasons versus duplicate members, equal timestamps, changed schema, delayed source arrival and failure after durable commit. Do not give the full answer before the learner attempts it. Hints can be progressive: clarify the contract, identify the boundary, then suggest a technique.
 
-请求 H3 没有惩罚，学习本来就允许辅导；但这道题只能记“辅导完成”。独立性要在后续不同题目中重新验证。不要为了拿高分隐瞒求助。
+The coach must not pretend to execute submitted code if it has only read it. Report “reviewed,” “executed,” and “not verified” explicitly.
 
-## 4. 每次提交的模板
+## Feedback and remediation
+Return a score per dimension, concrete evidence supporting it, failed/missing criteria and a narrow next exercise. If the learner loses unmatched records, practice a three-row left join before assigning a larger Spark job.
 
-把下面填写后发给教练。大段代码可以保存在课程内自己的文件中并给出路径；日志放 D 盘 `.learning-runtime/evidence/`。
+After a corrected submission, reassess the failed concept with a different input. Do not award the original score automatically after the learner pastes a suggested fix.
 
-```text
-验收关卡：G__
-环境：PowerShell / Ubuntu Bash；Python 路径；相关组件版本
-目标：我本次要证明什么
-操作前预测：我预计哪些输出／状态会改变，为什么
-实际命令：可复制的命令，不包含密码
-代码：文件路径／本次修改点
-实际证据：输出、退出码、Run ID、相关日志或产物路径
-差异解释：预测与结果不一致的原因
-故障恢复：故障、假设、验证、修复、复测
-独立解释：我能说明的原理和仍不理解的地方
-使用过的帮助：H1 / H2 / H3 / 官方文档
-```
+## Retention and portfolio review
+After a week, ask the learner to rebuild one transformation from its contract and diagnose a new failure. At capstone review, require a clean-checkout reproduction and a ten-minute explanation.
 
-截图只作为补充，不能代替命令与日志。Airflow 截图应包含 DAG、任务状态和 Run ID；先遮住凭据。不需要上传真实项目数据库配置。
+Portfolio claims must link to actual code, tests and artifacts. “Local mode on synthetic data” is a valid scope. “Production distributed platform” is not supported by this course alone. Passing the course does not guarantee employment or mastery of every data-engineering domain.
 
-## 5. 每关验收题目与证据
+## Learner record
+Current status: NOT ASSESSED. No checkpoint has been passed by the author on the learner's behalf.
 
-| 关卡 | 必交证据 | 教练要检查的能力 | 示例追问，不是完整题库 |
-|---|---|---|---|
-| G0 | Python 路径、版本、WSL 状态 | 区分解释器和终端 | pip 显示已安装但 import 失败，先查什么？ |
-| G1 | 五阶段命令、汇总与具体记录 | 看懂数据流 | 13 个候选为什么不等于 13 次提交？ |
-| G2 | Schema、重复 id、歧义实验 | 数据契约与匹配语义 | 两个不同会员共用联系方式怎样保留候选？ |
-| G3 | 正常重跑、提交后失败恢复 | 幂等边界 | 本地台账未写入但 CRM 已成功怎么办？ |
-| G4 | WSL2、两个 venv 和所有版本 | 环境隔离 | 为什么不能直接升级生产 .venv？ |
-| G5 | Graph、Run ID、日志、XCom | DAG／Task instance | task 返回路径时文件真正放在哪里？ |
-| G6 | 临时与永久故障、调度日期 | 重试、阻断、时间语义 | catchup=False 能禁止人工历史回填吗？ |
-| G7 | DataFrame 小程序、schema、plan | 惰性执行与 null | 为什么 filter 很快，不代表计算完成？ |
-| G8 | 实现、5 个测试、现场变式 | 正确 Join 和去重 | 加一个匹配原因列后，去重键怎么选？ |
-| G9 | Parquet 对比、测量表、计划 | 正确性能实验 | 反复复制同一 Join key 为什么可能变慢？ |
-| G10 | Spark job＋DAG＋3 个故障场景 | 组件集成与产物契约 | task 重试读到半个输出目录怎么办？ |
-| G11 | 三批输入、台账、独立任务 | 端到端交付 | 迟到记录怎样避免遗漏和重复处理？ |
-
-## 6. 结业考核
-
-时长建议拆成两个学习时段，允许查官方文档。由教练给新的虚构数据和故障，不提前把完整实现交给你。
-
-| 项目 | 分值 | 必须证明的结果 |
-|---|---:|---|
-| 匹配与数据契约 | 30 | 具体匹配边正确、空值和重复候选正确 |
-| Airflow 编排 | 20 | 依赖、失败传播、重试和日期参数正确 |
-| Spark 实现 | 20 | 用 DataFrame 实现，有清楚的执行计划和输出契约 |
-| 重跑与恢复 | 20 | 提交后失败、跨 run 重复、迟到数据有处理证据 |
-| 说明与交接 | 10 | 别人能复现，局限明确，关键追问答得出 |
-
-结业条件：至少 85/100、每项达到该项分值的 60%、无关键错误，且 G0–G10 的欠项已经补齐。
-
-初次结业后，下一次会话或约一周后做一次短复测：不照看自己的旧代码，完成一个新的小变式并诊断一个失败日志。没有这次复测，只记录“首次结业通过”，不记录“保持掌握”。不创建自动提醒；你回来提交时继续。
-
-通过范围是本项目的批处理管道基础。Spark 多节点容量规划、Airflow 高可用、安全部署、Kafka／流处理不属于这次结业承诺。
-
-## 7. 当前学习记录
-
-以下只能根据你实际提交的证据更新。作者的自测不计入你的成绩。
-
-| 关卡 | 状态 | 分数 | 证据 | 下一步 |
-|---|---|---|---|---|
-| G0 | 未验收 | — | — | 提交环境结果与解释 |
-| G1 | 未开始 | — | — | 五阶段运行 |
-| G2 | 未开始 | — | — | 契约和边界实验 |
-| G3 | 未开始 | — | — | 重跑与超时恢复 |
-| G4 | 未开始 | — | — | D 盘 WSL 与环境 |
-| G5 | 未开始 | — | — | 第一个 DAG |
-| G6 | 未开始 | — | — | 故障与调度 |
-| G7 | 未开始 | — | — | 第一个 DataFrame |
-| G8 | 未开始 | — | — | Spark 匹配作业 |
-| G9 | 未开始 | — | — | Parquet 与性能 |
-| G10 | 未开始 | — | — | 集成管道 |
-| G11 | 未开始 | — | — | 结业任务 |
-| 保持掌握复测 | 未开始 | — | — | 结业后另一次会话 |
-
-## 8. 教练反馈格式
-
-```text
-本关判定：通过 / 需补练 / 辅导完成待独立复测
-评分：正确性 __/5，解释 __/5，独立性 __/5，排错与证据 __/5
-已证明：具体能力及其证据
-尚未证明：不能从当前证据推断的能力
-关键误解：如有，指出对应代码／解释
-补练或变式：一个明确任务
-下一步：继续 G__ 或重新验收当前关
-```
-
-更新学习记录时只写真实证据，不默认后续所有关卡通过。换会话时先读本文件与 `docs/AI-HANDOFF.md`，继续最早的未验收关卡。
+Keep future assessment results in a private learning journal with date, checkpoint, evidence references, scores, feedback and reassessment outcome. Do not publish personal grading records automatically with the public course.

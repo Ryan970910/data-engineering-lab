@@ -1,17 +1,11 @@
 # Data Engineering Lab
 
-A Chinese beginner course in Airflow and PySpark, using fictional ROI / Buyer / member data.
+An English, concept-first course for a Python developer with basic SQL. Twenty modules connect a fictional membership-data case study to SQL, reliable pipelines, Airflow, PySpark and an evidence-led capstone.
 
-Study online: https://Ryan970910.github.io/data-engineering-lab/
+Study: https://ryan970910.github.io/data-engineering-lab/
 
-Only teaching material is published here. No production source, customer data, credentials, or private repository history.
+Start with docs/data-engineering/MANUAL.md. Run exercises in an isolated D-drive checkout. All fixtures are fictional. No business source, private configuration, customer data or private repository history is published.
 
-## Practice
+Browser reading/self-checks do not certify practical mastery. Submit code, outputs and explanations to a coach for an unseen-variant assessment. Airflow/Spark runtime must be verified in your learning environment; the Spark exercise is intentionally incomplete.
 
-Clone into D:\projects\data-engineering-lab. Create a separate Windows virtual environment with `py -3 -m venv .venv`. Read the website's preparation page before running commands. Python 3.9+ covers G0–G3; Linux/Airflow/Spark use the pinned course environments.
-
-Phone: read, self-check, and write notes. Computer: execute exercises. Browser progress is local and can be exported/imported; it is not a verified grade.
-
-## Maintenance
-
-This is a generated publication artifact; source course and website build are maintained in the private project. Do not edit generated course copies here.
+This is an allowlisted generated publication artifact. Instructional and website sources are maintained separately; do not edit generated copies here.
