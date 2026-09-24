@@ -1,0 +1,7 @@
+{
+  "name": "data-engineering-learning-site",
+  "private": true,
+  "type": "module",
+  "scripts": {"build": "node build.mjs", "test": "node verify.mjs"},
+  "devDependencies": {"marked": "17.0.5", "playwright": "1.62.1"}
+}

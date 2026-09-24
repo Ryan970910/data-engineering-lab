@@ -6,6 +6,8 @@ This course is for a developer who can write Python independently and knows basi
 The case study is a membership-data workflow involving ROI, Buyer and member records. You will learn to turn business rules into contracts, write relational transformations, test quality, recover from failures and explain when orchestration or distributed computation is justified. The exercises use fictional data only.
 
 ## How to study
+For small executable examples with tool-fit decisions first, open [Fictional cases](CASES.md), then the [statement-by-statement walkthrough](WALKTHROUGH.md). These invented rules are independent learning exercises, not a production migration or a business-equivalence claim.
+
 1. Read the concept and project example.
 2. Predict the result before executing commands.
 3. Complete the guided lab and inspect actual artifacts.

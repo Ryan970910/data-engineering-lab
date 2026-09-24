@@ -1,0 +1,186 @@
+{
+  "groups": [
+    {
+      "title": "Understand the discipline",
+      "description": "Concepts and project context before products."
+    },
+    {
+      "title": "Build a correct pipeline",
+      "description": "SQL, transformations and executable quality."
+    },
+    {
+      "title": "Design for reliability",
+      "description": "Storage, recovery and orchestration decisions."
+    },
+    {
+      "title": "Learn the tools by doing",
+      "description": "Linux, Airflow and PySpark with real experiments."
+    },
+    {
+      "title": "Demonstrate independent ability",
+      "description": "Integration, operations and an evidence-led capstone."
+    }
+  ],
+  "modules": [
+    {
+      "id": "m00",
+      "file": "lessons/00-data-engineering.md",
+      "title": "What data engineering is",
+      "outcome": "Explain how reliable data supports a business decision",
+      "group": 0,
+      "effort": "45–90 min"
+    },
+    {
+      "id": "m01",
+      "file": "lessons/01-project-case-study.md",
+      "title": "Your project as a case study",
+      "outcome": "Map the real project to a safe learning architecture",
+      "group": 0,
+      "effort": "45–90 min"
+    },
+    {
+      "id": "m02",
+      "file": "lessons/02-records-schemas-and-keys.md",
+      "title": "Records, schemas and keys",
+      "outcome": "Define grain, identity and join cardinality",
+      "group": 0,
+      "effort": "45–90 min"
+    },
+    {
+      "id": "m03",
+      "file": "lessons/03-ingestion-and-batch-design.md",
+      "title": "Ingestion and batch design",
+      "outcome": "Choose snapshots, contracts and processing boundaries",
+      "group": 0,
+      "effort": "45–90 min"
+    },
+    {
+      "id": "m04",
+      "file": "lessons/04-python-terminal-and-git.md",
+      "title": "Reproducible Python practice",
+      "outcome": "Control interpreters, paths and reproducible runs",
+      "group": 1,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m05",
+      "file": "lessons/05-sql-from-first-principles.md",
+      "title": "SQL beyond basic queries",
+      "outcome": "Use joins, NULLs, CTEs and exact-result checks",
+      "group": 1,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m06",
+      "file": "lessons/06-first-pipeline.md",
+      "title": "Your first complete pipeline",
+      "outcome": "Trace artifacts and verify each stage",
+      "group": 1,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m07",
+      "file": "lessons/07-transformation-contracts.md",
+      "title": "Transformation contracts",
+      "outcome": "Implement matching without changing its meaning",
+      "group": 1,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m08",
+      "file": "lessons/08-quality-and-testing.md",
+      "title": "Data quality and testing",
+      "outcome": "Reject unsafe input and test meaningful invariants",
+      "group": 1,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m09",
+      "file": "lessons/09-storage-and-modeling.md",
+      "title": "Storage and data modeling",
+      "outcome": "Choose storage and design historical analytical tables",
+      "group": 2,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m10",
+      "file": "lessons/10-reliability-and-recovery.md",
+      "title": "Reliability and recovery",
+      "outcome": "Prove safe retry after uncertain completion",
+      "group": 2,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m11",
+      "file": "lessons/11-orchestration-concepts.md",
+      "title": "Orchestration before tools",
+      "outcome": "Separate coordination, computation and business time",
+      "group": 2,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m12",
+      "file": "lessons/12-linux-and-tool-environments.md",
+      "title": "Linux and tool environments",
+      "outcome": "Prepare isolated D-drive learning environments",
+      "group": 3,
+      "effort": "Setup varies"
+    },
+    {
+      "id": "m13",
+      "file": "lessons/13-airflow-hands-on.md",
+      "title": "Airflow hands-on",
+      "outcome": "Operate a DAG, observe retries and block unsafe delivery",
+      "group": 3,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m14",
+      "file": "lessons/14-spark-foundations.md",
+      "title": "Spark foundations",
+      "outcome": "Explain lazy execution, schema and partitions",
+      "group": 3,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m15",
+      "file": "lessons/15-spark-matching.md",
+      "title": "Matching with PySpark",
+      "outcome": "Implement and test exact identity joins",
+      "group": 3,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m16",
+      "file": "lessons/16-spark-performance.md",
+      "title": "Spark plans and performance",
+      "outcome": "Measure execution and explain shuffle trade-offs",
+      "group": 3,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m17",
+      "file": "lessons/17-integrate-orchestration-and-compute.md",
+      "title": "Airflow + Spark integration",
+      "outcome": "Build explicit job and artifact contracts",
+      "group": 4,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m18",
+      "file": "lessons/18-incremental-and-observable.md",
+      "title": "Incremental and observable pipelines",
+      "outcome": "Handle changes, checkpoints and operational signals",
+      "group": 4,
+      "effort": "2–4 hours"
+    },
+    {
+      "id": "m19",
+      "file": "lessons/19-capstone-and-portfolio.md",
+      "title": "Capstone and portfolio",
+      "outcome": "Defend your implementation with reproducible evidence",
+      "group": 4,
+      "effort": "6–12 hours"
+    }
+  ]
+}

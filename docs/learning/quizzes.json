@@ -1,0 +1,882 @@
+{
+  "m00": [
+    [
+      "What is the main responsibility of a data engineer?",
+      [
+        "Make data reliably usable for a defined purpose",
+        "Install the largest available tool stack",
+        "Create charts without checking their inputs"
+      ],
+      0,
+      [
+        "Reliability and fitness for a business use are the goal.",
+        "Tools are means; unnecessary complexity can reduce reliability.",
+        "Visualizations depend on trustworthy upstream data."
+      ]
+    ],
+    [
+      "A CSV arrives successfully. What remains unproven?",
+      [
+        "Nothing; arrival means success",
+        "Its schema, meaning, freshness and downstream suitability",
+        "Only its filename"
+      ],
+      1,
+      [
+        "Transport success is only one boundary.",
+        "Arrival does not establish quality or fitness for use.",
+        "A filename cannot prove content correctness."
+      ]
+    ],
+    [
+      "Which evidence best demonstrates learning?",
+      [
+        "Marking every page read",
+        "Repeating a product definition",
+        "Implementing a new case and explaining its failure recovery"
+      ],
+      2,
+      [
+        "Reading is exposure, not implementation evidence.",
+        "Recall is useful but does not demonstrate transfer.",
+        "Implementation plus diagnosis shows applied understanding."
+      ]
+    ]
+  ],
+  "m01": [
+    [
+      "Which ROI–Buyer rule is in scope?",
+      [
+        "Name plus phone",
+        "Name plus hashed HKID",
+        "Any shared identifier"
+      ],
+      1,
+      [
+        "Phone belongs to the separate member-matching relation.",
+        "The specified rule uses both name and hashed HKID.",
+        "A universal fallback would change business meaning."
+      ]
+    ],
+    [
+      "What should the public learning repository contain?",
+      [
+        "Real records with names removed",
+        "Production configuration for realism",
+        "Synthetic fixtures and original learning code"
+      ],
+      2,
+      [
+        "Other fields and hashes can still identify people.",
+        "Configuration can expose secrets and private infrastructure.",
+        "Synthetic inputs support safe reproducibility."
+      ]
+    ],
+    [
+      "Where should source-specific processing live?",
+      [
+        "In its source module, with orchestration coordinating it",
+        "Copied into every launcher",
+        "Inside the scheduler's import-time code"
+      ],
+      0,
+      [
+        "Clear ownership avoids competing implementations.",
+        "Copies drift and confuse responsibility.",
+        "Import-time work can execute outside an intended run."
+      ]
+    ]
+  ],
+  "m02": [
+    [
+      "What is the grain of a member candidate row?",
+      [
+        "One person",
+        "One source-record/member identity edge",
+        "One daily batch"
+      ],
+      1,
+      [
+        "A person may have multiple source records and candidates.",
+        "The identity tuple defines exactly one possible relationship.",
+        "Batch metadata has a different grain."
+      ]
+    ],
+    [
+      "Two different member IDs share one contact. What should deduplication preserve?",
+      [
+        "Both distinct candidate identities",
+        "Only the first row",
+        "Only the newest-looking name"
+      ],
+      0,
+      [
+        "Different IDs represent different candidates under the contract.",
+        "First-row selection silently erases ambiguity.",
+        "No such selection rule has been authorized."
+      ]
+    ],
+    [
+      "How should a phone with a leading zero be stored for matching?",
+      [
+        "As a float",
+        "As an integer",
+        "As a string under an explicit schema"
+      ],
+      2,
+      [
+        "Floating-point representation changes identifier semantics.",
+        "Integer conversion drops leading zeros.",
+        "Identifiers are not quantities to calculate with."
+      ]
+    ]
+  ],
+  "m03": [
+    [
+      "Why freeze a snapshot?",
+      [
+        "To make all future source updates impossible",
+        "To bind a run to reproducible input",
+        "To avoid validating schemas"
+      ],
+      1,
+      [
+        "Source systems can continue changing independently.",
+        "A snapshot separates run input from later arrivals.",
+        "Frozen invalid data is still invalid."
+      ]
+    ],
+    [
+      "What distinguishes ETL from ELT?",
+      [
+        "Whether data is trustworthy",
+        "Whether Python or SQL is used",
+        "Where transformation occurs relative to loading"
+      ],
+      2,
+      [
+        "Either design needs quality controls.",
+        "Both can use several languages.",
+        "The order/location of transformation is the distinction."
+      ]
+    ],
+    [
+      "Which statement about a content hash is correct?",
+      [
+        "It can detect changed represented content but is not complete security",
+        "It anonymizes every field",
+        "It proves row ordering is irrelevant"
+      ],
+      0,
+      [
+        "Its guarantee depends on representation and trusted metadata.",
+        "Hashing does not automatically anonymize data.",
+        "The lab's JSON digest includes list order."
+      ]
+    ]
+  ],
+  "m04": [
+    [
+      "A package exists but import fails. What do you inspect first?",
+      [
+        "Randomly reinstall all packages",
+        "The exact interpreter and its environment",
+        "The business matching rule"
+      ],
+      1,
+      [
+        "Random changes obscure the cause.",
+        "Imports depend on the interpreter's installed packages.",
+        "A dependency failure precedes matching semantics."
+      ]
+    ],
+    [
+      "Why use a separate course checkout and venv?",
+      [
+        "To isolate learning changes from production",
+        "To guarantee every runtime works",
+        "To avoid version tracking"
+      ],
+      0,
+      [
+        "Isolation protects the production environment.",
+        "Each runtime still needs actual execution tests.",
+        "Reproducibility needs explicit versions."
+      ]
+    ],
+    [
+      "What belongs in a public evidence commit?",
+      [
+        "All runtime logs and caches",
+        "Private API configuration",
+        "Selected synthetic code, tests and redacted results"
+      ],
+      2,
+      [
+        "Generated files can be huge or sensitive.",
+        "Credentials/configuration do not belong in public evidence.",
+        "A selected reproducible artifact is useful and safer."
+      ]
+    ]
+  ],
+  "m05": [
+    [
+      "How do you test SQL NULL?",
+      [
+        "= NULL",
+        "IS NULL",
+        "= '' always"
+      ],
+      1,
+      [
+        "Ordinary equality with NULL is not true.",
+        "IS NULL expresses the missing-value test.",
+        "Empty string and NULL differ."
+      ]
+    ],
+    [
+      "Why can UNION ALL duplicate GIA's candidate?",
+      [
+        "Phone and email branches can emit the same identity edge",
+        "It always removes all duplicates",
+        "It changes the member ID"
+      ],
+      0,
+      [
+        "Two reasons can support one projected identity.",
+        "UNION ALL preserves duplicates.",
+        "It does not manufacture new IDs."
+      ]
+    ],
+    [
+      "How do you retain records with zero candidates?",
+      [
+        "Inner join from candidates only",
+        "Count candidate rows without source data",
+        "Left join candidate counts to all source identities"
+      ],
+      2,
+      [
+        "Unmatched source rows are absent from candidates.",
+        "This cannot restore missing source identities.",
+        "Start from all source records to preserve zero-candidate cases."
+      ]
+    ]
+  ],
+  "m06": [
+    [
+      "You edit raw CSV after extract, then run match. Which input is used?",
+      [
+        "The edited raw file automatically",
+        "The manifest-bound snapshot",
+        "Whichever file is newest"
+      ],
+      1,
+      [
+        "Matching does not reread raw files.",
+        "Extraction deliberately pins the input version.",
+        "Modification time is not the input contract."
+      ]
+    ],
+    [
+      "Baseline counts are 13 edges and 9 matched records. Is that contradictory?",
+      [
+        "Yes, every edge must be a delivered record",
+        "No, they count different grains",
+        "Yes, one count must be deleted"
+      ],
+      1,
+      [
+        "Ambiguous records can have multiple edges.",
+        "Candidate relationships and eligible decisions are distinct.",
+        "Both measurements are useful when defined."
+      ]
+    ],
+    [
+      "A previous delivery.json exists after validation fails. What does it prove?",
+      [
+        "The current run succeeded",
+        "Validation can be skipped",
+        "Only that some earlier output may exist"
+      ],
+      2,
+      [
+        "A stale file is not current success evidence.",
+        "Failure must still block unsafe delivery.",
+        "Tie artifacts to the current run and input."
+      ]
+    ]
+  ],
+  "m07": [
+    [
+      "Why must a Buyer hash index map to a list of IDs?",
+      [
+        "The key may have multiple Buyer records",
+        "Lists automatically validate names",
+        "Only lists can be hashed"
+      ],
+      0,
+      [
+        "One-to-many relationships must not be overwritten.",
+        "Validation is a separate contract.",
+        "The point is preserving cardinality, not hashing lists."
+      ]
+    ],
+    [
+      "ADA's ROI and Buyer match each other. Does the Buyer inherit the ROI's member?",
+      [
+        "Always",
+        "Only because they share a hash",
+        "Not under the stated independent member rule"
+      ],
+      2,
+      [
+        "Transitive identity inference was not specified.",
+        "Member matching uses name and contact, not that hash.",
+        "Each source record must satisfy the authorized member predicate."
+      ]
+    ],
+    [
+      "Which comparison best checks a rewritten matcher?",
+      [
+        "Same row count only",
+        "Exact identity tuples plus independent fixtures",
+        "Same runtime duration"
+      ],
+      1,
+      [
+        "Wrong rows can have the same count.",
+        "This tests semantic equivalence and known edge cases.",
+        "Speed does not establish correctness."
+      ]
+    ]
+  ],
+  "m08": [
+    [
+      "Which input problem invalidates the lab's extraction?",
+      [
+        "An allowed missing email with a usable phone",
+        "Duplicate source IDs",
+        "An unmatched but structurally valid record"
+      ],
+      1,
+      [
+        "Missing contacts can be allowed by the contract.",
+        "Duplicate identity prevents reliable record tracking.",
+        "Unmatched can be a legitimate decision."
+      ]
+    ],
+    [
+      "What does a passing author test suite establish?",
+      [
+        "Every environment works",
+        "The learner has mastered the topic",
+        "The tested implementation passed those tested conditions"
+      ],
+      2,
+      [
+        "Untested runtimes remain unverified.",
+        "Author checks do not assess learner independence.",
+        "State the tested scope rather than universal success."
+      ]
+    ],
+    [
+      "Why assert matched + ambiguous + unmatched equals source count?",
+      [
+        "To detect lost or duplicated decisions",
+        "To make candidate counts equal member counts",
+        "To avoid exact-edge tests"
+      ],
+      0,
+      [
+        "Conservation checks preserve source-record coverage.",
+        "Those relations have different grains.",
+        "Conservation complements, not replaces, identity tests."
+      ]
+    ]
+  ],
+  "m09": [
+    [
+      "Why include run_id in historical candidate keys?",
+      [
+        "To make queries slower deliberately",
+        "To distinguish the same source record across runs",
+        "To replace member_id"
+      ],
+      1,
+      [
+        "Its purpose is history identity.",
+        "Different snapshots can produce different candidates.",
+        "Member identity remains part of the edge."
+      ]
+    ],
+    [
+      "What does Parquet alone not provide?",
+      [
+        "Typed columns",
+        "Columnar storage",
+        "A universal multi-file transaction/upsert protocol"
+      ],
+      2,
+      [
+        "Parquet stores schema/type information.",
+        "Columnar organization is a core feature.",
+        "Table-management guarantees require additional systems/protocols."
+      ]
+    ],
+    [
+      "Which denominator suits a record ambiguity rate?",
+      [
+        "All source records in the defined run/source scope",
+        "All candidate edges ever produced",
+        "Only ambiguous records"
+      ],
+      0,
+      [
+        "Define the population matching the metric's grain.",
+        "Edges and mixed runs distort the rate.",
+        "This would make the rate trivially 100%."
+      ]
+    ]
+  ],
+  "m10": [
+    [
+      "A sender times out after receiver commit. What is known?",
+      [
+        "Nothing was written",
+        "The outcome is uncertain to the sender",
+        "Retry is always unsafe"
+      ],
+      1,
+      [
+        "A lost response can follow a successful commit.",
+        "The sender needs a recovery/deduplication protocol.",
+        "Retries can be safe with the right receiver contract."
+      ]
+    ],
+    [
+      "What should happen for the same operation key with a different payload?",
+      [
+        "Silently ignore the conflict",
+        "Always create another record",
+        "Reject or resolve the conflict explicitly"
+      ],
+      2,
+      [
+        "Silent conflict hides inconsistent intent.",
+        "Reusing identity for a new operation breaks the contract.",
+        "Operation identity must bind to a consistent payload."
+      ]
+    ],
+    [
+      "What does the lab's repeat-delivery test prove?",
+      [
+        "Deduplication in the same mock receiver database",
+        "Exactly once across all real APIs",
+        "Cross-workspace deduplication"
+      ],
+      0,
+      [
+        "That is the demonstrated boundary.",
+        "No remote API protocol was exercised.",
+        "Different workspaces hold different receiver databases."
+      ]
+    ]
+  ],
+  "m11": [
+    [
+      "What does Airflow primarily coordinate?",
+      [
+        "The semantics of every matching predicate",
+        "Task dependencies, state and execution timing",
+        "All data rows through XCom"
+      ],
+      1,
+      [
+        "Business semantics stay in processing modules.",
+        "Orchestration manages when and how tasks run.",
+        "Large datasets belong in artifact storage."
+      ]
+    ],
+    [
+      "A retry runs tomorrow. Which input window should it use?",
+      [
+        "The original intended data interval",
+        "Whatever datetime.now says",
+        "All source history automatically"
+      ],
+      0,
+      [
+        "Retry should preserve logical input scope.",
+        "Wall-clock time can select different data.",
+        "Full history is a different operation unless specified."
+      ]
+    ],
+    [
+      "Why avoid API calls at DAG module top level?",
+      [
+        "Python cannot make API calls",
+        "It prevents all future retries",
+        "Parsing can repeat work outside a task run"
+      ],
+      2,
+      [
+        "Python can perform I/O; placement is the issue.",
+        "Retry policy is independent.",
+        "Discovery should not trigger business side effects."
+      ]
+    ]
+  ],
+  "m12": [
+    [
+      "Can a Windows venv be activated as a Linux venv?",
+      [
+        "Yes, paths are interchangeable",
+        "No, create separate OS-specific environments",
+        "Only if you rename python.exe"
+      ],
+      1,
+      [
+        "The binaries and environment layout differ.",
+        "Use separate environments and explicit interpreter paths.",
+        "Renaming does not convert an executable."
+      ]
+    ],
+    [
+      "Which constraints match Airflow 3.3.2 on Python 3.12?",
+      [
+        "The release's constraints-3.12 file",
+        "Any latest constraints file",
+        "A Spark requirements file"
+      ],
+      0,
+      [
+        "Match both release and Python minor version.",
+        "Unrelated versions may conflict.",
+        "Spark has its separate environment."
+      ]
+    ],
+    [
+      "What does successful pip install pyspark prove?",
+      [
+        "The JVM has executed your job",
+        "Every Spark transformation is correct",
+        "The Python package installation completed"
+      ],
+      2,
+      [
+        "A real Spark action is still needed.",
+        "Business correctness needs tests.",
+        "Installation is one layer, not complete runtime verification."
+      ]
+    ]
+  ],
+  "m13": [
+    [
+      "Why does the DAG helper use check=True?",
+      [
+        "To hide stderr",
+        "To turn a nonzero subprocess exit into task failure",
+        "To copy output data into XCom"
+      ],
+      1,
+      [
+        "Error visibility is important.",
+        "Failure must propagate to orchestration.",
+        "It controls failure behavior, not data transport."
+      ]
+    ],
+    [
+      "How should a first-attempt-only failure marker be stored?",
+      [
+        "A durable marker in the run workspace",
+        "A global Python counter only",
+        "Inside a production database"
+      ],
+      0,
+      [
+        "Retries may run in another process.",
+        "Process memory is not reliable attempt state.",
+        "This exercise should remain isolated and synthetic."
+      ]
+    ],
+    [
+      "A returned path fails on another worker. Why?",
+      [
+        "XCom always corrupts strings",
+        "The dataset must be put in XCom",
+        "The path reference did not transfer the file"
+      ],
+      2,
+      [
+        "The string may be perfectly correct.",
+        "Large data needs shared artifact storage.",
+        "Workers need access to the referenced storage."
+      ]
+    ]
+  ],
+  "m14": [
+    [
+      "Which operation normally triggers execution?",
+      [
+        "select alone",
+        "count",
+        "Constructing a Column expression"
+      ],
+      1,
+      [
+        "Selection normally builds a plan.",
+        "count is an action.",
+        "An expression describes work."
+      ]
+    ],
+    [
+      "Why explicitly schema an empty fixture?",
+      [
+        "There are no values from which to infer types",
+        "Empty data must always be an error",
+        "It forces a broadcast join"
+      ],
+      0,
+      [
+        "The schema remains necessary even with zero rows.",
+        "Empty inputs can be valid test cases.",
+        "Schema does not choose that strategy."
+      ]
+    ],
+    [
+      "What does local[2] demonstrate?",
+      [
+        "Two independent machines",
+        "A production cluster deployment",
+        "Local Spark execution with two worker threads"
+      ],
+      2,
+      [
+        "It does not provision machines.",
+        "Local operation has a narrower scope.",
+        "Describe local-mode experience accurately."
+      ]
+    ]
+  ],
+  "m15": [
+    [
+      "Which columns define unique member candidate edges?",
+      [
+        "record_id alone",
+        "source, record_id, member_id",
+        "name and match_reason"
+      ],
+      1,
+      [
+        "This loses source and member distinctions.",
+        "These identify the contractual edge.",
+        "Reasons support edges but are not their identity."
+      ]
+    ],
+    [
+      "Where is collect allowed in the supplied exercise?",
+      [
+        "Inside the learner's matcher for all data",
+        "Everywhere because fixtures are small",
+        "In the bounded tiny-fixture assessment harness"
+      ],
+      2,
+      [
+        "The implementation must remain DataFrame-based.",
+        "The exercise teaches a transferable execution boundary.",
+        "Bounded test comparison is intentionally separate."
+      ]
+    ],
+    [
+      "Why add unseen cases after public checks?",
+      [
+        "To assess transfer beyond visible fixtures",
+        "To change business rules without notice",
+        "To punish documentation use"
+      ],
+      0,
+      [
+        "Independent adaptation is stronger evidence.",
+        "Variants should preserve the published contract.",
+        "Reference lookup is normal engineering."
+      ]
+    ]
+  ],
+  "m16": [
+    [
+      "What can an Exchange indicate in a physical plan?",
+      [
+        "Data movement between partitions",
+        "Automatic proof of wrong results",
+        "A completed CRM update"
+      ],
+      0,
+      [
+        "Shuffles often appear as Exchanges.",
+        "A valid plan may require movement.",
+        "This is a computation plan, not receiver evidence."
+      ]
+    ],
+    [
+      "How should you compare performance?",
+      [
+        "Time plan construction once",
+        "Use equal output work, correct results and repeated trials",
+        "Report only the fastest run"
+      ],
+      1,
+      [
+        "Lazy plan construction is not execution time.",
+        "A controlled comparison makes claims interpretable.",
+        "Cherry-picking hides variability."
+      ]
+    ],
+    [
+      "When can forced broadcast be harmful?",
+      [
+        "Never",
+        "Only when every key is unique",
+        "When the broadcast side exceeds safe memory assumptions"
+      ],
+      2,
+      [
+        "Broadcast is not universally optimal.",
+        "Key uniqueness is not the sole constraint.",
+        "Replicating a large side can exhaust resources."
+      ]
+    ]
+  ],
+  "m17": [
+    [
+      "What should an integration job publish on failure?",
+      [
+        "A success marker for convenience",
+        "No valid success publication, and a nonzero exit",
+        "An old result relabeled as new"
+      ],
+      1,
+      [
+        "That defeats downstream safety.",
+        "Status and artifact publication must agree.",
+        "Stale outputs must be rejected."
+      ]
+    ],
+    [
+      "Why explicitly select Spark's Python in an Airflow task?",
+      [
+        "To separate tool environments and dependencies",
+        "To make Spark run in the browser",
+        "To remove the need for Java"
+      ],
+      0,
+      [
+        "A subprocess can use a dedicated runtime.",
+        "The static site does not execute Spark.",
+        "Spark still needs its JVM runtime."
+      ]
+    ],
+    [
+      "Which proves the Spark implementation is actually integrated?",
+      [
+        "A green DAG using the old reference only",
+        "A diagram naming Spark",
+        "An injected failure in your Spark function propagates and blocks delivery"
+      ],
+      2,
+      [
+        "That does not exercise the new implementation.",
+        "A diagram describes intent only.",
+        "Observed failure propagation tests the real path."
+      ]
+    ]
+  ],
+  "m18": [
+    [
+      "When should a checkpoint advance?",
+      [
+        "As soon as a row is observed",
+        "Before output is durable",
+        "After the corresponding durable work is committed under the recovery protocol"
+      ],
+      2,
+      [
+        "Observation is not completion.",
+        "This can lose data after a crash.",
+        "Checkpoint semantics must match durable progress."
+      ]
+    ],
+    [
+      "Does hashing an identifier guarantee anonymity?",
+      [
+        "No, it may remain guessable or linkable",
+        "Yes, always",
+        "Only if the hash is printed in logs"
+      ],
+      0,
+      [
+        "Treat linked identifiers as potentially sensitive.",
+        "Hashing alone is not an anonymization guarantee.",
+        "Logging increases exposure, not anonymity."
+      ]
+    ],
+    [
+      "Why can a completed-run-only success metric mislead?",
+      [
+        "It always counts too many missing runs",
+        "It excludes expected runs that never happened",
+        "Metrics should never have denominators"
+      ],
+      1,
+      [
+        "Missing runs may be absent entirely.",
+        "Define the denominator from the obligation/schedule.",
+        "A precise denominator is essential."
+      ]
+    ]
+  ],
+  "m19": [
+    [
+      "Which portfolio claim is supported by this course's local capstone?",
+      [
+        "Production distributed deployment by default",
+        "Enterprise-scale guarantees without benchmarks",
+        "Synthetic local-mode pipeline with tested contracts and recovery"
+      ],
+      2,
+      [
+        "Production needs its own authorized evidence.",
+        "Scale claims need measurements.",
+        "An honest bounded claim is valuable."
+      ]
+    ],
+    [
+      "What is required for a practical checkpoint pass?",
+      [
+        "Evidence, explanation and an unseen variant meeting the rubric",
+        "A full reading progress bar",
+        "A screenshot of installed tools"
+      ],
+      0,
+      [
+        "The rubric evaluates applied independent ability.",
+        "Reading does not prove implementation.",
+        "Installation is only one prerequisite."
+      ]
+    ],
+    [
+      "Why repeat a task a week later?",
+      [
+        "To certify every future technology",
+        "To test retention and transfer",
+        "To avoid reviewing code"
+      ],
+      1,
+      [
+        "No course can guarantee that.",
+        "Reconstruction reveals durable understanding.",
+        "Code review remains useful."
+      ]
+    ]
+  ]
+}

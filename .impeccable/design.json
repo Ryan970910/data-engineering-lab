@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-19T14:28:25Z",
+  "title": "Design System: Learning Lab",
+  "extensions": {
+    "colorMeta": {
+      "blue": {
+        "role": "primary",
+        "displayName": "Blue",
+        "tonalRamp": [
+          "oklch(15% 0.1785 260.2)",
+          "oklch(26% 0.1785 260.2)",
+          "oklch(38% 0.1785 260.2)",
+          "oklch(49% 0.1785 260.2)",
+          "oklch(61% 0.1785 260.2)",
+          "oklch(72% 0.1785 260.2)",
+          "oklch(84% 0.1785 260.2)",
+          "oklch(95% 0.1785 260.2)"
+        ]
+      },
+      "blue-soft": {
+        "role": "primary",
+        "displayName": "Blue soft",
+        "tonalRamp": [
+          "oklch(15% 0.0166 259.4)",
+          "oklch(26% 0.0166 259.4)",
+          "oklch(38% 0.0166 259.4)",
+          "oklch(49% 0.0166 259.4)",
+          "oklch(61% 0.0166 259.4)",
+          "oklch(72% 0.0166 259.4)",
+          "oklch(84% 0.0166 259.4)",
+          "oklch(95% 0.0166 259.4)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0279 255.2)",
+          "oklch(26% 0.0279 255.2)",
+          "oklch(38% 0.0279 255.2)",
+          "oklch(49% 0.0279 255.2)",
+          "oklch(61% 0.0279 255.2)",
+          "oklch(72% 0.0279 255.2)",
+          "oklch(84% 0.0279 255.2)",
+          "oklch(95% 0.0279 255.2)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0341 253.1)",
+          "oklch(26% 0.0341 253.1)",
+          "oklch(38% 0.0341 253.1)",
+          "oklch(49% 0.0341 253.1)",
+          "oklch(61% 0.0341 253.1)",
+          "oklch(72% 0.0341 253.1)",
+          "oklch(84% 0.0341 253.1)",
+          "oklch(95% 0.0341 253.1)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0.0133 251.6)",
+          "oklch(26% 0.0133 251.6)",
+          "oklch(38% 0.0133 251.6)",
+          "oklch(49% 0.0133 251.6)",
+          "oklch(61% 0.0133 251.6)",
+          "oklch(72% 0.0133 251.6)",
+          "oklch(84% 0.0133 251.6)",
+          "oklch(95% 0.0133 251.6)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.9)",
+          "oklch(26% 0.0000 89.9)",
+          "oklch(38% 0.0000 89.9)",
+          "oklch(49% 0.0000 89.9)",
+          "oklch(61% 0.0000 89.9)",
+          "oklch(72% 0.0000 89.9)",
+          "oklch(84% 0.0000 89.9)",
+          "oklch(95% 0.0000 89.9)"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ground",
+        "tonalRamp": [
+          "oklch(15% 0.0045 258.3)",
+          "oklch(26% 0.0045 258.3)",
+          "oklch(38% 0.0045 258.3)",
+          "oklch(49% 0.0045 258.3)",
+          "oklch(61% 0.0045 258.3)",
+          "oklch(72% 0.0045 258.3)",
+          "oklch(84% 0.0045 258.3)",
+          "oklch(95% 0.0045 258.3)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Home heading",
+        "purpose": "Home introduction; mobile uses a fixed 34px size."
+      },
+      "body": {
+        "displayName": "Article prose",
+        "purpose": "Chinese reading content; interface line height is tighter."
+      }
+    },
+    "shadows": [
+      {
+        "name": "toast",
+        "value": "0 8px 28px #182b452b",
+        "purpose": "Transient status above the reading page."
+      }
+    ],
+    "motion": [
+      {
+        "name": "page-arrival",
+        "value": "arrive .22s ease-out; opacity .6 → 1; translateY(4px) → none",
+        "purpose": "Reveal the newly selected reading pane."
+      },
+      {
+        "name": "drawer",
+        "value": "transform .18s ease-out",
+        "purpose": "Open and close mobile chapter navigation."
+      },
+      {
+        "name": "toast",
+        "value": "opacity .15s",
+        "purpose": "Show transient status."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation:none; transition:none; scroll-behavior:auto",
+        "purpose": "Honor prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "single-reading-column",
+        "value": "1200px"
+      },
+      {
+        "name": "wide-page-padding",
+        "value": "1450px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "A secondary course or progress action.",
+      "html": "<button class=\"ds-button\">导出本关验收草稿</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:9px 16px;border:1px solid var(--line,#dce3eb);border-radius:9px;background:var(--paper,#fff);color:var(--ink,#202a37);font:550 15px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif;text-decoration:none;cursor:pointer}.ds-button:hover{background:#edf2f8;border-color:#aebdcc}.ds-button:focus-visible{outline:3px solid #4388ec;outline-offset:4px}"
+    },
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The next reading or self-check action.",
+      "html": "<a class=\"ds-button ds-primary\" href=\"#g0\">从第 0 关开始 →</a>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:9px 16px;border:1px solid var(--line,#dce3eb);border-radius:9px;background:var(--paper,#fff);color:var(--ink,#202a37);font:550 15px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif;text-decoration:none;cursor:pointer}.ds-button:hover{background:#edf2f8;border-color:#aebdcc}.ds-button:focus-visible{outline:3px solid #4388ec;outline-offset:4px}.ds-primary{background:var(--blue,#1456c0);color:white;border-color:var(--blue,#1456c0)}.ds-primary:hover{background:#10469e;border-color:#10469e}"
+    },
+    {
+      "name": "Course search",
+      "kind": "input",
+      "refersTo": "search",
+      "description": "Labelled search in the course rail.",
+      "html": "<label class=\"ds-search-label\" for=\"ds-search\">搜索课程</label><input class=\"ds-search\" id=\"ds-search\" type=\"search\" placeholder=\"搜索概念、关卡、报错…\">",
+      "css": ".ds-search-label{display:block;color:var(--muted,#586779);font:12px/1.65 system-ui,sans-serif;margin-bottom:6px}.ds-search{width:100%;min-height:42px;border:1px solid #d2dce7;border-radius:8px;padding:8px 10px;background:white;color:var(--ink,#202a37);font:13px/1.65 system-ui,sans-serif;caret-color:var(--blue,#1456c0)}.ds-search:focus-visible{outline:3px solid #4388ec;outline-offset:4px}"
+    },
+    {
+      "name": "Chapter navigation",
+      "kind": "nav",
+      "description": "Current chapter with its identifier and reading marker.",
+      "html": "<nav aria-label=\"课程导航\"><a class=\"ds-nav ds-active\" href=\"#g0\" aria-current=\"page\"><span class=\"ds-code\">G0</span><span>环境与基础</span><span class=\"ds-dot\" aria-label=\"已读\"></span></a><a class=\"ds-nav\" href=\"#g1\"><span class=\"ds-code\">G1</span><span>跑通数据管道</span></a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:10px;color:#48586b;text-decoration:none;font:13px/1.65 system-ui,sans-serif;min-height:42px;padding:8px 10px;border-radius:8px;margin:2px 0}.ds-nav:hover{background:#e1e8f2;color:var(--ink,#202a37)}.ds-nav.ds-active{background:#dce8fb;color:#144b9d;font-weight:650}.ds-code{font-variant-numeric:tabular-nums;font-size:11px;width:27px;flex-shrink:0;color:var(--muted,#586779)}.ds-dot{width:6px;height:6px;border-radius:50%;background:var(--blue,#1456c0);margin-left:auto}.ds-nav:focus-visible{outline:3px solid #4388ec;outline-offset:4px}"
+    },
+    {
+      "name": "Resume surface",
+      "kind": "card",
+      "refersTo": "resume",
+      "description": "Saved chapter and one continuation action.",
+      "html": "<section class=\"ds-resume\" aria-label=\"继续学习\"><div><small>继续上次的学习</small><h2>G0 · 环境与基础</h2></div><a class=\"ds-button ds-primary\" href=\"#g0\">继续学习 →</a></section>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:9px 16px;border:1px solid var(--line,#dce3eb);border-radius:9px;background:var(--paper,#fff);color:var(--ink,#202a37);font:550 15px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif;text-decoration:none;cursor:pointer}.ds-button:hover{background:#edf2f8;border-color:#aebdcc}.ds-button:focus-visible{outline:3px solid #4388ec;outline-offset:4px}.ds-primary{background:var(--blue,#1456c0);color:white;border-color:var(--blue,#1456c0)}.ds-primary:hover{background:#10469e;border-color:#10469e}.ds-resume{background:var(--blue-soft,#eaf1fc);color:var(--ink,#202a37);border-radius:var(--radius,14px);padding:24px 28px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:22px;font-family:system-ui,sans-serif}.ds-resume small{color:#355981;display:block;margin-bottom:6px;font-size:12px}.ds-resume h2{margin:0;font-size:20px;line-height:1.35;letter-spacing:-.025em}"
+    },
+    {
+      "name": "Notes field",
+      "kind": "input",
+      "refersTo": "note-field",
+      "description": "Local learner notes with an explicit save boundary.",
+      "html": "<label class=\"ds-note-label\" for=\"ds-note\">用自己的话，留下证据</label><textarea class=\"ds-note\" id=\"ds-note\" placeholder=\"我的预测：\"></textarea><p class=\"ds-note-hint\">输入时自动保存到此浏览器；无云端同步。</p>",
+      "css": ".ds-note-label{display:block;font:600 15px/1.65 system-ui,sans-serif;margin:0 0 10px;color:var(--ink,#202a37)}.ds-note{width:100%;min-height:170px;resize:vertical;border:1px solid #bbc9da;background:white;color:var(--ink,#202a37);border-radius:9px;padding:16px;font:14px/1.8 system-ui,sans-serif;caret-color:var(--blue,#1456c0)}.ds-note::placeholder{color:#586779}.ds-note-hint{font:12px/1.65 system-ui,sans-serif;color:var(--muted,#586779);margin:8px 0 16px}.ds-note:focus-visible{outline:3px solid #4388ec;outline-offset:4px}"
+    },
+    {
+      "name": "Self-check option",
+      "kind": "custom",
+      "refersTo": "answer-option",
+      "description": "Native radio choice; checked state changes border and fill.",
+      "html": "<label class=\"ds-option\"><input type=\"radio\" name=\"ds-answer\" checked><span>先预测结果，再运行练习。</span></label><label class=\"ds-option\"><input type=\"radio\" name=\"ds-answer\"><span>只阅读输出，不解释原因。</span></label>",
+      "css": ".ds-option{display:flex;gap:12px;align-items:flex-start;padding:11px 13px;border:1px solid var(--line,#dce3eb);border-radius:8px;background:white;color:var(--ink,#202a37);margin:8px 0;cursor:pointer;font:14px/1.65 system-ui,sans-serif}.ds-option:has(input:checked){border-color:#5585cb;background:#eaf1fc}.ds-option input{accent-color:var(--blue,#1456c0);margin:5px 0 0;width:17px;height:17px;flex-shrink:0}.ds-option input:focus-visible{outline:3px solid #4388ec;outline-offset:4px}"
+    },
+    {
+      "name": "Code block",
+      "kind": "custom",
+      "description": "Scrollable command text and compact copy affordance; preview is visual only.",
+      "html": "<div class=\"ds-code-wrap\"><div class=\"ds-toolbar\"><span>powershell</span><button type=\"button\">复制</button></div><pre><code>py --version</code></pre></div>",
+      "css": ".ds-code-wrap{border-radius:11px;overflow:hidden;background:#192637;color:#edf4ff}.ds-toolbar{display:flex;justify-content:space-between;align-items:center;background:#243449;padding:7px 14px;color:#c3d3e7;font:11px/1.65 system-ui,sans-serif}.ds-toolbar button{background:transparent;color:#edf4ff;border:1px solid #677991;padding:4px 11px;font:550 11px/1.4 system-ui,sans-serif;min-height:30px;border-radius:5px;cursor:pointer}.ds-toolbar button:hover{background:#354961}.ds-toolbar button:focus-visible{outline:3px solid #4388ec;outline-offset:4px}.ds-code-wrap pre{margin:0;padding:20px;overflow:auto;tab-size:4;font:13px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace}.ds-code-wrap code{font:inherit;white-space:pre}"
+    }
+  ],
+  "narrative": {
+    "overview": "This document applies only to the learning website in `docs/learning/`. It does not define the production desktop application's appearance. The implemented HTML, CSS and JavaScript are the visual evidence; the user's confirmed direction is a clean, Apple-like reading workspace, built as a plain static site.\n\nCool surfaces, graphite text and restrained blue support long Chinese explanations and familiar English technology names. System fonts, fine separators and generous reading space keep the course practical and calm. No additional metaphor or brand identity is implied.",
+    "keyCharacteristics": [
+      "A persistent chapter position and direct route from reading to practice.",
+      "Spacious reading content with compact supporting navigation.",
+      "Explicit reading, self-check and local-save states."
+    ],
+    "rules": [],
+    "dos": [
+      "Do preserve the quiet Apple-like reading direction and system font stack.",
+      "Do keep Chinese instructional text, code and visible learning states legible.",
+      "Do preserve keyboard focus, labelled controls, contained overflow and reduced-motion behavior."
+    ],
+    "donts": [
+      "Don't apply this website design system to the production desktop UI.",
+      "Don't present reading marks or concept self-check results as proof of practical mastery.",
+      "Don't add imagery or decorative components without a concrete reading or learning purpose."
+    ]
+  }
+}
