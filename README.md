@@ -4,6 +4,8 @@ An English, concept-first course for a Python developer with basic SQL. Twenty m
 
 Study: https://ryan970910.github.io/data-engineering-lab/
 
+**Actual project migration:** [real modules and verification gates](docs/migration/README.md), with code in `src/club_migration/`. This is distinct from the fictional introductory `case_lab`; the real workflows are still partial, not production-validated replacements.
+
 Start with docs/data-engineering/MANUAL.md. Run exercises in an isolated D-drive checkout. All fixtures are fictional. No business source, private configuration, customer data or private repository history is published.
 
 Browser reading/self-checks do not certify practical mastery. Submit code, outputs and explanations to a coach for an unseen-variant assessment. Airflow/Spark runtime must be verified in your learning environment; the Spark exercise is intentionally incomplete.
